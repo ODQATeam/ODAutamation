@@ -11,10 +11,6 @@ ${name}=              محمود
 *** Keywords ***
 Luanch Dialer
     Open Application  ${REMOTE_URL}   platformName=Android  deviceName=${device}    udid=${device}    appPackage=com.orange.mea.phone    appActivity=DialtactsActivity    unicodeKeyboard=True
-    #Capture Page Screenshot     unlock_apk-debug.apk.png
-    # Press Keycode        ${KEYCODE_HOME}
-    # Click Element        ${phonedialer}
-    Wait Until Page Contains Element    ${search box}    1s
 
 Custome scroll down
     [Arguments]     ${dy}=10
