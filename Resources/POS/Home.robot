@@ -11,7 +11,7 @@ ${Myorange_tab}        xpath=//android.widget.ImageView[@content-desc='VAS']
 #3 dots menue --> content-desc='More options'
 ${Options_menu}        xpath=//*[contains(@resource-id,'id/dialtacts_options_menu_button')]
 ${Search}              xpath=//android.widget.ImageButton[contains(@resource-id,'id/search_magnifying_glass')]
-${Dialpad_keys}        xpath=//*[@resource-id='com.orange.mea.phone:id/floating_action_button']
+${Dialpad_keys}        xpath=//*[contains(@resource-id,'id/floating_action_button')]
 
 *** Keywords ***
 Verify app loaded
