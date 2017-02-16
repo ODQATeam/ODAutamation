@@ -4,7 +4,8 @@ Library        OperatingSystem
 Library        String
 Resource       ../Resources/Commonutils/basicdialersetups.robot
 Resource       ../Resources/POS/Home.robot
-Test Setup      Luanch Dialer
+Test Setup      Launch dialer
+Test Teardown   Close dialer app
 *** Variables ***
 #${REMOTE_URL}        http://127.0.0.2:3456/wd/hub
 ${device}             01994096A3000842
@@ -16,7 +17,13 @@ ${contacts}				xpath=//*[@content-desc='الأرقام']
 #${favorite}           xpath=//*[contains(@id, 'com.orange.mea.phone:id/call_sheet_title_favorite_button')]
 *** Test Cases ***
 Env Smoke Test
-    #Luanch Dialer
+    #Launch Dialer
     Click Element    ${contacts_tab}
     Click Element    ${contacts}
     Click Element    xpath=//*[@class='android.widget.ImageView'][@content-desc='Favorites' or @content-desc='المفضله']
+
+Test home kwds
+    [Tags]  home
+    given navigate to call log
+    when launch dialpad
+    then page should contain element  xpath=//*[@resource-id='com.orange.mea.phone:id/digits']
