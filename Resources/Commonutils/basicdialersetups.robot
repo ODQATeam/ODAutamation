@@ -9,9 +9,12 @@ ${phonenum}           01005400481
 ${search box}         xpath=//*[contains(@resource-id,':id/search_box_collapsed')]
 ${name}=              محمود
 *** Keywords ***
-Luanch Dialer
+Launch dialer
     Open Application  ${REMOTE_URL}   platformName=Android  deviceName=${device}    udid=${device}    appPackage=com.orange.mea.phone    appActivity=DialtactsActivity    unicodeKeyboard=True
 
 Custome scroll down
     [Arguments]     ${dy}=10
     ${output}=      run     adb -s ${device} shell input swipe 24 682 20 202 100
+
+Close dialer app
+    close application
