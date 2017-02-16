@@ -11,8 +11,8 @@ Test Teardown   Close dialer app
 ${device}             01994096A3000842
 ${KEYCODE_HOME}       3
 ${phonenum}           01005400481
-${contacts_tab}        xpath=//*[@text='الهاتف']
-${contacts}				xpath=//*[@content-desc='الأرقام']
+${contacts_tab}       xpath=//*[@text='الهاتف']
+${contacts}			  xpath=//*[@content-desc='الأرقام']
 #${contact_name}       xpath=//*[contains(@class,'android.widget.TextView') and contains (@name,'Adan Singh')]
 #${favorite}           xpath=//*[contains(@id, 'com.orange.mea.phone:id/call_sheet_title_favorite_button')]
 *** Test Cases ***
