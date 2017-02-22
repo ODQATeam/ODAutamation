@@ -10,6 +10,7 @@ ${Delete_digits}            xpath=//android.widget.ImageButton[contains(@resourc
 ${Search_list_names}        xpath=//android.widget.ListView/android.widget.RelativeLayout/*[contains(@resource-id,'id/search_contact_name')]
 ${Search_list_phones}       xpath=//android.widget.ListView/android.widget.RelativeLayout/*[contains(@resource-id,'id/search_contact_number')]
 ${Dial_btn}                 xpath=//*[contains(@resource-id,'id/dialpad_floating_action_button')]
+${Add_to_contacts}          xpath=//android.widget.LinearLayout[contains(@resource-id,'search_add_contact_item')]/android.widget.ImageView
 *** Keywords ***
 Verify dialpad loaded
     page should contain element  ${dial_pad_view}
@@ -45,3 +46,6 @@ Dial a phone number
             \       Sleep    1s
             \       Log To Console    ${locator}
             \       click element     ${locator}
+
+Add to contacts visible
+    page should contain element  ${Add_to_contacts}
