@@ -2,16 +2,16 @@
 Library         AppiumLibrary
 Library         String
 *** Variables ***
-${Call_status}             xpath=//android.widget.TextView[@resource-id='com.orange.mea.phone:id/callStateLabel']
-${Call_control_pannel}     xpath=//*[@resource-id='com.orange.mea.phone:id/callButtonFragment']
-${Callee_name}             xpath=//android.widget.TextView[@resource-id='com.orange.mea.phone:id/name']
-${Phone_number}            xpath=//android.widget.TextView[@resource-id='com.orange.mea.phone:id/phoneNumber']
-${Toggle_speaker}          xpath=//android.widget.ToggleButton[@resource-id='com.orange.mea.phone:id/audioButton']
-${Toggle_mute}             xpath=//android.widget.ToggleButton[@resource-id='com.orange.mea.phone:id/muteButton']
-${Dial_btn}                xpath=//android.widget.ToggleButton[@resource-id='com.orange.mea.phone:id/dialpadButton']
-${Toggle_hold}             xpath=//android.widget.ToggleButton[@resource-id='android.widget.ToggleButton']
-${Add_callee}              xpath=//android.widget.ToggleButton[@resource-id='com.orange.mea.phone:id/addButton']
-${End_call}                xpath=//android.widget.ImageButton[@resource-id='com.orange.mea.phone:id/floating_end_call_action_button']
+${Call_status}             xpath=//android.widget.TextView[contains(@resource-id,':id/callStateLabel')]
+${Call_control_pannel}     xpath=//*[contains(@resource-id,':id/callButtonFragment')]
+${Callee_name}             xpath=//android.widget.TextView[contains(@resource-id,':id/name')]
+${Phone_number}            xpath=//android.widget.TextView[contains(@resource-id,':id/phoneNumber')]
+${Toggle_speaker}          xpath=//android.widget.ToggleButton[contains(@resource-id,':id/audioButton')]
+${Toggle_mute}             xpath=//android.widget.ToggleButton[contains(@resource-id,':id/muteButton')]
+${Dial_btn}                xpath=//android.widget.ToggleButton[contains(@resource-id,':id/dialpadButton')]
+${Toggle_hold}             xpath=//android.widget.ToggleButton[contains(@resource-id,'android.widget.ToggleButton')]
+${Add_callee}              xpath=//android.widget.ToggleButton[contains(@resource-id,':id/addButton')]
+${End_call}                xpath=//android.widget.ImageButton[contains(@resource-id,':id/floating_end_call_action_button')]
 *** Keywords ***
 Verify call on screen
     page should contain element  ${call_control_pannel}

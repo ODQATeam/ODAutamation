@@ -2,8 +2,9 @@
 Library         AppiumLibrary
 *** Variables ***
 ${Favorite_page}        xpath=//android.widget.TextView[@text='المفضله' or @text='Favorite']
-${Contact_cards}        xpath=//*[@resource-id='com.orange.mea.phone:id/contact_tile']
-${Contact_card_names}    xpath=//*[@resource-id='com.orange.mea.phone:id/contact_tile_name']
+${Contact_cards}        xpath=//*[contains(@resource-id,':id/contact_tile')]
+${Contact_card_names}   xpath=//*[contains(@resource-id,':id/contact_tile_name')]
+${Contacts_images}      xpath=//*[contains(@resource-id,':id/contact_tile_image')]
 *** Keywords ***
 Verify favorite page loaded
     page should contain element  ${Favorite_page}
@@ -14,7 +15,7 @@ Call favorite by name
 
 Call favorite by index
     [Arguments]  ${index}
-    click element  xpath=//*[@resource-id='com.orange.mea.phone:id/contact_tile_image'][${index}]
+    click element  ${Contacts_images}[${index}]
 
 Open contact page by name
     [Arguments]  ${name}

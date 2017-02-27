@@ -8,9 +8,11 @@ ${KEYCODE_HOME}       3
 ${phonenum}           01005400481
 ${search box}         xpath=//*[contains(@resource-id,':id/search_box_collapsed')]
 ${name}=              محمود
+${ODM_package}        com.orange.phone.mea
+${ODM_AppActivity}    com.orange.phone.DialtactsActivity
 *** Keywords ***
 Launch dialer
-    Open Application  ${REMOTE_URL}   platformName=Android  deviceName=${device}    udid=${device}    appPackage=com.orange.mea.phone    appActivity=DialtactsActivity    unicodeKeyboard=True
+    Open Application  ${REMOTE_URL}   platformName=Android  deviceName=${device}    udid=${device}    appPackage=${ODM_package}    appActivity=${ODM_AppActivity}    unicodeKeyboard=True
 
 Custome scroll down
     [Arguments]     ${dy}=10

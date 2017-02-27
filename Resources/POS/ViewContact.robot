@@ -1,23 +1,24 @@
 *** Settings ***
 Library         AppiumLibrary
 *** Variables ***
-${View_contact_page}        xpath=//*[@resource-id='com.orange.mea.phone:id/call_sheet_layout']
-${Toggle_favorite}          xpath=//*[@resource-id='com.orange.mea.phone:id/call_sheet_title_favorite_button']
-${Edit_pen}                 xpath=//*[@resourc-id='com.orange.mea.phone:id/call_sheet_title_contact_button']
-${Contact_more_menu}        xpath=//*[@resourc-id='com.orange.mea.phone:id/call_sheet_title_more_button']
-${Contact_name}             xpath=//*[@resourc-id='com.orange.mea.phone:id/contact_name']
-${Contact_view_mobile}      xpath=//*[@resource-id='com.orange.mea.phone:id/callSheetPrimaryInfo']
-${Contact_view_call}        xpath=//*[@resource-id='com.orange.mea.phone:id/callSheetPrimaryImage']
-${Contact_view_message}     xpath=//*[@resource-id='com.orange.mea.phone:id/callSheetSecondaryImage']
-${Contact_history_log}      xpath=//*[@resource-id='com.orange.mea.phone:id/layout']
-${Contact_more_items}       xpath=//*[@resource-id='android:id/title']
+${View_contact_page}        xpath=//*[contains(@resource-id,'id/call_sheet_layout')]
+#                                                   com.orange.phone.mea:id/call_sheet_title_favorite_button
+${Toggle_favorite}          xpath=//*[contains(@resource-id,'id/call_sheet_title_favorite_button')]
+${Edit_pen}                 xpath=//*[@resourc-id='id/call_sheet_title_contact_button']
+${Contact_more_menu}        xpath=//*[@resourc-id='id/call_sheet_title_more_button']
+${Contact_name}             xpath=//*[@resourc-id='id/contact_name']
+${Contact_view_mobile}      xpath=//*[contains(@resource-id,'id/callSheetPrimaryInfo')]
+${Contact_view_call}        xpath=//*[contains(@resource-id,'id/callSheetPrimaryImage')]
+${Contact_view_message}     xpath=//*[contains(@resource-id,'id/callSheetSecondaryImage')]
+${Contact_history_log}      xpath=//*[contains(@resource-id,'id/layout')]
+${Contact_more_items}       xpath=//*[contains(@resource-id,'android:id/title')]
 ${Contact_delete}           ${Contact_more_items}[@text='مسح']
 ${Contact_share}            ${Contact_more_items}[@text='مشاركه']
 ${Contact_pane}             ${Contact_more_items}[contains(@text,'حظر المتصل')]
-${Contact_blocked_icon}     xpath=//*[@resource-id='com.orange.mea.phone:id/blocked_icon']
-${Delete_warning}           xpath=//*[@resource-id='android:id/message']
-${Contact_delete_confirm}    xpath=//*[@resource-id='android:id/button1']
-${Contact_delete_cancel}    xpath=//*[@resource-id='android:id/button2']
+${Contact_blocked_icon}     xpath=//*[contains(@resource-id,'id/blocked_icon')]
+${Delete_warning}           xpath=//*[contains(@resource-id,'android:id/message')]
+${Contact_delete_confirm}   xpath=//*[contains(@resource-id,'android:id/button1')]
+${Contact_delete_cancel}    xpath=//*[contains(@resource-id,'android:id/button2')]
 
 *** Keywords ***
 Verify contact page loaded

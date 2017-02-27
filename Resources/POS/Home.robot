@@ -3,9 +3,10 @@ Library         AppiumLibrary
 *** Variables ***
 # tabs
 ${App_Home_Lable}      xpath=//android.widget.TextView[@text='Phone' or @text='الهاتف']
-${Favorites_tab}       xpath=//*[@class='android.widget.ImageView'][@content-desc='Favorites' or @content-desc='المفضله']
+${Favorites_tab}       xpath=//android.widget.ImageView[@content-desc='Favorites' or @content-desc='المفضله']
 ${Call_Log_tab}        xpath=//android.widget.ImageView[@content-desc='Recents' or @content-desc='الأخيره']
-${Contacts_tab}        xpath=//android.widget.ImageView[@text='Contacts' or @text='الأرقام']
+#${Contacts_tab}        xpath=//android.widget.ImageView[@text='Contacts' or @text='الأرقام']/../android.widget.FrameLayout
+${Contacts_tab}        xpath=//android.widget.ImageView[@content-desc='Contacts' or @content-desc='الأرقام']
 ${Link_tab}            xpath=//android.widget.ImageView[@content-desc='VAS']
 ${Myorange_tab}        xpath=//android.widget.ImageView[@content-desc='VAS']
 #3 dots menue --> content-desc='More options'
