@@ -6,6 +6,7 @@ ${Contacs_names}        xpath=//*[@resource-id='android:id/list']/android.view.V
 *** Keywords ***
 Get contacts names
     [Return]  get elements  ${Contacs_names}
+
 Select contact by index
     [Arguments]  ${idx}
      click element   ${Contacts_list}[${idx}]
