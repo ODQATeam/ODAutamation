@@ -4,6 +4,9 @@ Resource       ../Resources/POS/Home.robot
 Resource       ../Resources/POS/Contacts.robot
 Resource       ../Resources/POS/ViewContact.robot
 Resource       ../Resources/POS/CallLog.robot
+
+Test Setup      Launch dialer
+Test Teardown   Close dialer app
 *** Test Cases ***
 Add a favorite from contacts
     [Tags]  Favorits    Core
@@ -19,3 +22,4 @@ Delete call event from long press
     CallLog.Verify call log loaded
     CallLog.Select entry by index  1
     CallLog.Delete selected entry
+
