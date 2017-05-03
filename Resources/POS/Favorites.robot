@@ -5,6 +5,8 @@ ${Favorite_page}        xpath=//android.widget.TextView[@text='المفضله' o
 ${Contact_cards}        xpath=//*[contains(@resource-id,':id/contact_tile')]
 ${Contact_card_names}   xpath=//*[contains(@resource-id,':id/contact_tile_name')]
 ${Contacts_images}      xpath=//*[contains(@resource-id,':id/contact_tile_image')]
+${Dialpad}    xpath=//android.widget.ImageButton
+
 *** Keywords ***
 Verify favorite page loaded
     page should contain element  ${Favorite_page}
@@ -19,8 +21,11 @@ Call favorite by index
 
 Open contact page by name
     [Arguments]  ${name}
-    click element  ${contact_card_names}[@text='${name}']/../android.widget.ImageView
+    click element  ${contact_card_names}[@text='${name}']/../../android.widget.RelativeLayout/android.widget.ImageView[@content-desc='عرض جهة الاتصال']
 
 Open contact page by index
     [Arguments]  ${index}
     click element  ${contact_card_names}[index]/../android.widget.ImageView
+
+CLick Dialpad button
+    click element  ${Dialpad}
