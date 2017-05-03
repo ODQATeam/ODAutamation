@@ -1,11 +1,13 @@
 *** Settings ***
 Library         AppiumLibrary
 *** Variables ***
-${Favorite_page}        xpath=//android.widget.TextView[@text='المفضله' or @text='Favorite']
+${Favorite_page}        xpath=//android.widget.TextView[@text='المفضلة' ]
 ${Contact_cards}        xpath=//*[contains(@resource-id,':id/contact_tile')]
 ${Contact_card_names}   xpath=//*[contains(@resource-id,':id/contact_tile_name')]
 ${Contacts_images}      xpath=//*[contains(@resource-id,':id/contact_tile_image')]
-${Dialpad}    xpath=//android.widget.ImageButton
+${Repeated_Contacts}    xpath=//android.widget.TextView[@text='اتصالات مكررة']
+${Elgawal_Label}        xpath=//*[contains(@resource-id,':id/frequent_phone_label') and @text='الجوال']
+${Elgawal_text}         xpath=//*[contains(@resource-id,':id/contact_tile_phone_type') and  @text='الجوال']
 
 *** Keywords ***
 Verify favorite page loaded
@@ -21,11 +23,8 @@ Call favorite by index
 
 Open contact page by name
     [Arguments]  ${name}
-    click element  ${contact_card_names}[@text='${name}']/../../android.widget.RelativeLayout/android.widget.ImageView[@content-desc='عرض جهة الاتصال']
+    click element  ${contact_card_names}[@text='${name}']/../android.widget.ImageView
 
 Open contact page by index
     [Arguments]  ${index}
     click element  ${contact_card_names}[index]/../android.widget.ImageView
-
-CLick Dialpad button
-    click element  ${Dialpad}
