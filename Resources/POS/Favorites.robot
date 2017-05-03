@@ -8,7 +8,7 @@ ${Contacts_images}      xpath=//*[contains(@resource-id,':id/contact_tile_image'
 ${Repeated_Contacts}    xpath=//android.widget.TextView[@text='اتصالات مكررة']
 ${Elgawal_Label}        xpath=//*[contains(@resource-id,':id/frequent_phone_label') and @text='الجوال']
 ${Elgawal_text}         xpath=//*[contains(@resource-id,':id/contact_tile_phone_type') and  @text='الجوال']
-
+${Dialpad}              xpath=//android.widget.ImageButton
 *** Keywords ***
 Verify favorite page loaded
     page should contain element  ${Favorite_page}
@@ -28,3 +28,6 @@ Open contact page by name
 Open contact page by index
     [Arguments]  ${index}
     click element  ${contact_card_names}[index]/../android.widget.ImageView
+
+Click dialpad button
+    click element  ${Dialpad}
